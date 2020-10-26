@@ -19,7 +19,7 @@ def insert_upsort(a):
         key = a[j]
         i = j-1
 
-        while i > 0 and a[i] > key:
+        while i >= 0 and a[i] > key:
             a[i+1] = a[i]
             i = i-1
 
