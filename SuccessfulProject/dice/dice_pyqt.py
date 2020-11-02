@@ -8,19 +8,19 @@ class Demo(QWidget):
         super(Demo, self).__init__()
         self.resize(350, 150)
         # 定义数量、最大值、附加值、计算按钮
-        self.number_label = QLabel('个数：', self)
-        self.max_label = QLabel('面数：', self)
-        self.other_label = QLabel('调整值：', self)
+        self.number_label = QLabel('投掷次数', self)
+        self.max_label = QLabel('最大面数', self)
+        self.other_label = QLabel('调整数', self)
         self.number_line = QLineEdit(self)
         self.max_line = QLineEdit(self)
         self.other_line = QLineEdit(self)
-        self.sum_button = QPushButton('点击求和：', self)
+        self.sum_button = QPushButton('点击求和', self)
         self.sum_line = QLineEdit(self)
         # 将clean按钮连接到功能函数
         self.clear_button = QPushButton('重置', self)
         self.clear_button_all = QPushButton('重置所有', self)
         self.clear_button.clicked.connect(self.clear)
-        self.clear_button_all.clicked.connect(self.clear)
+        self.clear_button_all.clicked.connect(self.clear_all)
         # 将sum按钮连接到功能函数
         self.sum_button.clicked.connect(self.roll_one_type)
 
@@ -61,9 +61,9 @@ class Demo(QWidget):
 
     def lineedit_init(self):
         """检查line内容不为空"""
-        self.number_line.setPlaceholderText('请输入个数')
-        self.max_line.setPlaceholderText('请输入面数')
-        self.other_line.setPlaceholderText('请输入附加值')
+        self.number_line.setPlaceholderText(' 请输入投掷次数')
+        self.max_line.setPlaceholderText(' 请输入最大面数')
+        self.other_line.setPlaceholderText(' 请输入调整数')
 
         self.number_line.textChanged.connect(self.check_input_func)
         self.max_line.textChanged.connect(self.check_input_func)
